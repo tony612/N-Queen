@@ -27,9 +27,9 @@ until over do
   arr = []
   begin
     if N < 8
-      timeout(0.00001) { str = $pipe[0].readline;arr = str.strip.split(',').map(&:to_i) }
+      timeout(0.0001) { str = $pipe[0].readline;arr = str.strip.split(',').map(&:to_i) }
     else
-      timeout(0.0001) {str = $pipe[0].readline_nonblock;arr = str.strip.split(',').map(&:to_i)}
+      timeout(0.001) {str = $pipe[0].readline_nonblock;arr = str.strip.split(',').map(&:to_i)}
     end
   rescue
     over = true

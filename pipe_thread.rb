@@ -81,4 +81,3 @@ end
 #p "Results:#{$result.length}"
 p "Num of Results:#{$results.length}"
 p "Time:#{(t_end.to_f * 1000.0).to_i - (t_begin.to_f * 1000.0).to_i}ms"
-p "Time:#{t_end.strftime("%6N").to_i  - t_begin.strftime("%6N").to_i}ms"

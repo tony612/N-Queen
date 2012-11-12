@@ -2,7 +2,7 @@ p 'Please input n:'
 N = gets.strip.to_i - 1
 
 $stack = [0]
-arr = []
+result = []
 
 def find_it k
   l = $stack.length
@@ -20,7 +20,7 @@ pos = 1
 until $stack.empty? and !find_it(pos)
   if it = find_it(pos)
     $stack.push it
-    arr.push($stack.dup) if $stack.length == N + 1
+    result.push($stack.dup) if $stack.length == N + 1
     pos = 0
   else
     pos = $stack.pop + 1
@@ -29,5 +29,5 @@ end
 t_end = Time.now
 
 #p "Results:#{$stack}"
-p "Num of Results:#{$stack.length}"
+p "Num of Results:#{result.length}"
 p "Time:#{(t_end.to_f * 1000.0).to_i - (t_begin.to_f * 1000.0).to_i}ms"
